@@ -10,6 +10,7 @@ namespace EntreHojas.WebAdmin.Controllers
     public class ProductosController : Controller
     {
         ProductosBL _productosBL;
+
         public ProductosController()
         {
             _productosBL = new ProductosBL();
