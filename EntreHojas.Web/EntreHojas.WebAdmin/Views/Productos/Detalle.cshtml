@@ -42,6 +42,29 @@
             @Html.DisplayFor(model => model.Existencia)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Categoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categoria.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrlImagen)
+        </dt>
+
+        <dd>
+            <img src="@Model.UrlImagen" alt="@Model.Descripcion" style="width:200px; height:auto;" />
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Activo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Activo)
+        </dd>
+
     </dl>
 </div>
 <p>
