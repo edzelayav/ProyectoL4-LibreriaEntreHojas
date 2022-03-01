@@ -41,14 +41,14 @@ namespace EntreHojas.BL
 
 
 
-        public void GuardarProducto(Producto producto)
+        public void GuardarProducto(Producto producto) //Sirve para cuando el producto no existe simplemente lo guarda
         {
             if(producto.Id == 0)
             {
                 _contexto.Productos.Add(producto);
             }
             else
-            {
+            {                   //Si ya existe consulta con la BD y la actualiza y guarda los cambios
                 var productoExistente = _contexto.Productos.Find(producto.Id);
 
                 productoExistente.Descripcion = producto.Descripcion;

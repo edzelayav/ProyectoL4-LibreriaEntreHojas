@@ -5,7 +5,7 @@
 }
 
 <h2>Crear</h2>
-
+                    <!--Al seleccionar la imagen, el navegador manda los bites, ya completo el proceso procede a guardar la imagen-->
 @using (Html.BeginForm("Crear", "Productos", FormMethod.Post, new { enctype = "multipart/form-data" })) 
 {
     @Html.AntiForgeryToken()
@@ -54,7 +54,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group"> <!-- Nos muestra un botón que nos permite seleccionar la imagen aguardar-->
             <label class="control-label col-md-2">Seleccionar Imagen</label>
             <div class="col-md-10">
                 <input type="file" name="imagen" id="imagen" />

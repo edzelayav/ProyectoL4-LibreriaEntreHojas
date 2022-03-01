@@ -50,11 +50,11 @@
             @Html.DisplayFor(model => model.Categoria.Descripcion)
         </dd>
 
-        <dt>
+        <dt>             <!-- Sirve para poder cambiar el nombre de las imagenes -->
             @Html.DisplayNameFor(model => model.UrlImagen)
         </dt>
 
-        <dd>
+        <dd>           <!-- Nos permite mostrar la imagen con su nombre y tamaño -->
             <img src="@Model.UrlImagen" alt="@Model.Descripcion" style="width:200px; height:auto;" />
         </dd>
         <dt>

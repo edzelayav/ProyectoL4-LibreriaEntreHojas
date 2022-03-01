@@ -33,12 +33,13 @@ namespace EntreHojas.WebAdmin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Crear(Categoria categoria)
+        public ActionResult Crear(Categoria categoria)   //
         {
-            if (ModelState.IsValid)
-            {
-                if (categoria.Descripcion != categoria.Descripcion.Trim())
-                {
+            if (ModelState.IsValid)  //Esto permite revisar si la categoria cumple con todos los requisitos de validaciones, si es así lo guarda
+            {                           // sino, me regresa al principio de lo que trataba de crear hasta cumplir con todas las validaciones.
+
+                if (categoria.Descripcion != categoria.Descripcion.Trim())  //Esto nos sirve para que la descripcion no tenga espacios, si es así 
+                {                                       //nos envía un mensaje de error
                     ModelState.AddModelError("Descripcion", "La descripción no debe contener espacios al inicio o al final");
                     return View(categoria);
                 }
@@ -60,12 +61,12 @@ namespace EntreHojas.WebAdmin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Editar(Categoria categoria)
+        public ActionResult Editar(Categoria categoria) //Lo mismo con editar 
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid)  // Esto permite revisar si la categoria cumple con todos los requisitos de validaciones, si es así lo guarda
             {
-                if (categoria.Descripcion != categoria.Descripcion.Trim())
-                {
+                if (categoria.Descripcion != categoria.Descripcion.Trim()) //Esto nos sirve para que la descripcion no tenga espacios, sie s así 
+                {                                                           //nos envía un mensaje de error
                     ModelState.AddModelError("Descripcion", "La descripción no debe contener espacios al inicio o al final");
                     return View(categoria);
                 }

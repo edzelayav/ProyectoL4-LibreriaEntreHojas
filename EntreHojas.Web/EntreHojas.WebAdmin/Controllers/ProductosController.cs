@@ -40,16 +40,16 @@ namespace EntreHojas.WebAdmin.Controllers
        [HttpPost]
         public ActionResult Crear(Producto producto, HttpPostedFileBase imagen)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid) // Esto permite revisar si el producto cumple con todos los requisitos de validaciones, si es así lo guarda
             {
-                if (producto.CategoriaId == 0)
+                if (producto.CategoriaId == 0) //Sirve para cuando no existen categoias creadas, nos hace saber para poder crear el producto completo
                 {
                     ModelState.AddModelError("CategoriaId", "Seleccione una categoria");
                     return View(producto);
                 }
 
 
-                if (imagen != null)
+                if (imagen != null) //Nos permite guardar la imagen del producto
                 {
                     producto.UrlImagen = GuardarImagen(imagen);
                 }
@@ -86,22 +86,22 @@ namespace EntreHojas.WebAdmin.Controllers
 
 
         [HttpPost]
-        public ActionResult Editar(Producto producto, HttpPostedFileBase imagen)
+        public ActionResult Editar(Producto producto, HttpPostedFileBase imagen) //Lo mismo con editar
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid) // Esto permite revisar si el producto cumple con todos los requisitos de validaciones, si es así lo guarda
             {
-                if (producto.CategoriaId == 0)
+                if (producto.CategoriaId == 0)  //Sirve para cuando no existen categoias creadas, nos hace saber para poder crear el producto completo
                 {
                     ModelState.AddModelError("CategoriaId", "Seleccione una categoria");
                     return View(producto);
                 }
 
-                if (imagen != null)
+                if (imagen != null) //Nos permite guardar la imagen del producto 
                 {
                     producto.UrlImagen = GuardarImagen(imagen);
                 }
 
-                _productosBL.GuardarProducto(producto);
+                _productosBL.GuardarProducto(producto); 
 
                 return RedirectToAction("Index");
             }
@@ -140,11 +140,11 @@ namespace EntreHojas.WebAdmin.Controllers
         }
 
 
-        private string GuardarImagen(HttpPostedFileBase imagen)
+        private string GuardarImagen(HttpPostedFileBase imagen)  //NOS permite guardar imagenes con los productos
         {
-            string path = Server.MapPath("~/Imagenes/" + imagen.FileName);
+            string path = Server.MapPath("~/Imagenes/" + imagen.FileName); //Busca toda la ruta de la imagen y la guarda
             imagen.SaveAs(path);
-
+                                                            //para guardar imagenes ya denemos tener creada una carpeta "Imagenes" en WebAdmin.
             return "/Imagenes/" + imagen.FileName;
         }
 
