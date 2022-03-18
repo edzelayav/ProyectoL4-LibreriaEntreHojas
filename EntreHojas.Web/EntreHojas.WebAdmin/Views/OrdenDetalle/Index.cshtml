@@ -6,11 +6,41 @@
 
 <h2>Detalle de la Orden No: @Model.Id</h2>
 
+
+
+<table class="table table-bordered table-hover">
+
+    <tr>
+        <td>Cliente:</td>
+        <td>@Model.cliente.Nombre</td>
+    </tr>
+
+    <tr>
+        <td>Teléfono:</td>
+        <td>@Model.cliente.Telefono</td>
+    </tr>
+
+    <tr>
+        <td>Dirección:</td>
+        <td>@Model.cliente.Direccion</td>
+    </tr>
+
+
+    <tr>
+        <td>Fecha:</td>
+        <td>@Model.Fecha</td>
+    </tr>
+
+
+
+</table>
+
+
 <p>
-    @Html.ActionLink("Nuevo Producto", "Crear")
-</p>
+    @Html.ActionLink("Nuevo Producto", "Crear", new { id = Model.Id })</p>
 <table class="table">
     <tr>
+        <th></th>
         <th>
           Producto
         </th>
@@ -28,6 +58,9 @@
 
 @foreach (var item in Model.ListadeOrdenDetalle) {
     <tr>
+        <td>
+            <img src="@item.Producto.UrlImagen" alt="@item.Producto.Descripcion" style="max-width: 64px; height:auto; " />
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Producto.Descripcion)
         </td>
@@ -47,3 +80,5 @@
 }
 
 </table>
+
+@Html.ActionLink("Regresar a ordenes", "Index", "Ordenes")
