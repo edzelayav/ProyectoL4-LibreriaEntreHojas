@@ -149,7 +149,8 @@
     <Content Include="img\gallery\07.jpg" />
     <Content Include="img\gallery\08.jpg" />
     <Content Include="img\img-01.jpg" />
-    <Content Include="img\simple-house-01.jpg" />
+    <Content Include="img\logo.jpeg" />
+    <Content Include="img\portada.jpg" />
     <Content Include="img\simple-house-logo.png" />
     <Content Include="js\jquery.min.js" />
     <Content Include="js\parallax.min.js" />
