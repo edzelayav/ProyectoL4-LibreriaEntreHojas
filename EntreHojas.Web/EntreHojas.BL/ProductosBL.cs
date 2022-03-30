@@ -40,7 +40,6 @@ namespace EntreHojas.BL
         }
 
 
-
         public void GuardarProducto(Producto producto) //Sirve para cuando el producto no existe simplemente lo guarda
         {
             if(producto.Id == 0)
