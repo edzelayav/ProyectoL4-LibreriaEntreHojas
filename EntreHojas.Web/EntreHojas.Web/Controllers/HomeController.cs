@@ -17,8 +17,8 @@ namespace EntreHojas.Web.Controllers
             var listadeProductos = productosBL.ObtenerProductos();
             ViewBag.adminWebsiteUrl = ConfigurationManager.AppSettings["adminWebsiteUrl"];
 
-
             return View(listadeProductos);
+
         }
     }
 }
