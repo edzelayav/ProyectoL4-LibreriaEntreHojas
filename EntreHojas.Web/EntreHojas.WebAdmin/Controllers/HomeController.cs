@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace EntreHojas.WebAdmin.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         // GET: Home

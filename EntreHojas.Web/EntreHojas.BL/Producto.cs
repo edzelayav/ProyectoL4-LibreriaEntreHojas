@@ -21,7 +21,7 @@ namespace EntreHojas.BL
         [Display(Name = "Descripcion")]//Esto nos indica que no puede estar nulo, que es un campo obligatorio,Sino ingresamos la descripción nos manda un mensaje de error
         [Required(ErrorMessage = "Ingrese la descripción")]
         [MinLength(3, ErrorMessage = "Ingrese minimo 3 caracteres")] //necesito ingresar minimo 3 caracteres
-        [MaxLength(20, ErrorMessage = "Ingrese un maximo de 20 caracteres")] //ingresar máximo 20 caracteres
+        [MaxLength(50, ErrorMessage = "Ingrese un maximo de 20 caracteres")] //ingresar máximo 50 caracteres
         public string Descripcion { get; set; }
 
 

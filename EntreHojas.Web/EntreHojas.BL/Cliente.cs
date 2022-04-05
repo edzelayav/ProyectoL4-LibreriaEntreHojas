@@ -23,7 +23,7 @@ namespace EntreHojas.BL
             public string Telefono { get; set; }
 
             [Required(ErrorMessage = "Ingrese su dirección")]
-            [MinLength(6, ErrorMessage = "Ingrese mínimo 6 caracteres")]
+            [MinLength(50, ErrorMessage = "Ingrese mínimo 6 caracteres")]
             public string Direccion { get; set; }
             public bool Activo { get; set; }
         }

@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace EntreHojas.WebAdmin.Controllers
 {
-   
+    [Authorize]
     public class ClientesController : Controller
     {
       
